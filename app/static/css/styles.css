@@ -1,0 +1,208 @@
+:root {
+  color-scheme: light dark;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, rgba(15,23,42,1) 0%, rgba(30,41,59,1) 100%);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.navbar {
+  background: rgba(15, 23, 42, 0.85);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+  backdrop-filter: blur(6px);
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #f8fafc;
+}
+
+.brand {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.nav-links a {
+  color: #38bdf8;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.welcome {
+  margin-right: 1rem;
+  color: #cbd5f5;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: clamp(2rem, 3vw + 1rem, 2.8rem);
+}
+
+.map-intro {
+  margin-bottom: 1rem;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.45);
+}
+
+.map {
+  height: 480px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 32px 64px rgba(15, 23, 42, 0.55);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.form-card {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 420px;
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.45);
+}
+
+.form-card input,
+.form-card textarea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(15, 23, 42, 0.7);
+  color: #e2e8f0;
+}
+
+.form-card button {
+  padding: 0.65rem 0.75rem;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-card button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 32px rgba(56, 189, 248, 0.35);
+}
+
+.form-footer {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #cbd5f5;
+}
+
+.flashes {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.flash {
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  background: rgba(148, 163, 184, 0.2);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.flash.success {
+  border-color: rgba(34, 197, 94, 0.35);
+  background: rgba(22, 163, 74, 0.2);
+}
+
+.flash.error {
+  border-color: rgba(239, 68, 68, 0.35);
+  background: rgba(220, 38, 38, 0.2);
+}
+
+.flash.info {
+  border-color: rgba(59, 130, 246, 0.35);
+  background: rgba(37, 99, 235, 0.2);
+}
+
+#pin-dialog {
+  border: none;
+  border-radius: 18px;
+  padding: 1.5rem;
+  background: rgba(15, 23, 42, 0.95);
+  color: #e2e8f0;
+  box-shadow: 0 32px 64px rgba(15, 23, 42, 0.65);
+}
+
+#pin-dialog::backdrop {
+  background: rgba(15, 23, 42, 0.7);
+}
+
+#pin-dialog menu {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+#pin-dialog button {
+  padding: 0.6rem 1.25rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+}
+
+#pin-dialog button[type="reset"] {
+  background: rgba(148, 163, 184, 0.15);
+  color: #cbd5f5;
+}
+
+#pin-dialog button[type="submit"] {
+  background: linear-gradient(135deg, #22d3ee, #818cf8);
+  color: white;
+}
+
+@media (max-width: 640px) {
+  .map {
+    height: 360px;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+}
+
+.pin-popup {
+  color: #0f172a;
+}
+
+.pin-popup h3 {
+  margin: 0 0 0.25rem;
+}
+
+.pin-meta {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #475569;
+}

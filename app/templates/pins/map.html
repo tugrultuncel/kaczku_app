@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Map · Kaczku{% endblock %}
+{% block content %}
+  <section class="map-intro">
+    <h1>Shared map</h1>
+    <p>Drop pins to share locations with the entire community. All pins are visible to every logged-in user.</p>
+    <p>Click on the map to place a new pin. Provide a short title and optional description to help others understand what you are sharing.</p>
+  </section>
+  <div id="map" class="map"></div>
+  <dialog id="pin-dialog">
+    <form method="dialog" id="pin-form">
+      <h2>Add a new pin</h2>
+      <p id="pin-location"></p>
+      <label for="pin-title">Title</label>
+      <input id="pin-title" name="title" required>
+      <label for="pin-description">Description (optional)</label>
+      <textarea id="pin-description" name="description" rows="3"></textarea>
+      <menu>
+        <button value="cancel" type="reset">Cancel</button>
+        <button value="confirm" type="submit">Save pin</button>
+      </menu>
+    </form>
+  </dialog>
+{% endblock %}
+{% block scripts %}
+  {{ super() }}
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44c=" crossorigin=""></script>
+  <script src="{{ url_for('static', filename='js/map.js') }}"></script>
+{% endblock %}
